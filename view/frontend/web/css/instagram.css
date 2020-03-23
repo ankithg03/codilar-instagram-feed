@@ -1,0 +1,148 @@
+.clear {
+	clear: both;
+}
+.gap-30 {
+	height: 30px;
+}
+.instangram-feed {
+    display: inline-block;
+    position: relative;
+}
+.instagram-image-name {
+
+    bottom: 5px;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 20px 0;
+    opacity: 0;
+    height: 0;
+}
+.instangram-feed:hover .instagram-image-name {
+    opacity: 1;
+    height: auto;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;
+}
+.block-title-main {
+	text-align: center;
+	margin-bottom: 35px;
+}
+.block-title-main h2 {
+	color: #333;
+	display: inline-block;
+	font-size: 30px;
+	line-height: 40px;
+	margin: 0 auto 15px;
+	position: relative;
+	text-align: center;
+	font-weight: 600;
+}
+
+.cp-fcontent {
+	text-align: center;
+}
+.cp-fcontent .instangram-feed a img {
+	display: block;
+}
+.cp-fcontent .instangram-feed a {
+	display: inline-block;
+	margin: 6px 6px 12px;
+	box-shadow: 0px 0px 4px #ccc;
+	padding: 5px;
+	vertical-align: middle;
+}
+/**
+ * @instagram feed style
+ */
+
+div#instagram-profile-picture {
+	display: flex;
+}
+
+#instagram-profile-picture img {
+	border-radius: 100%;
+	align-items: center;
+	margin: auto;
+}
+
+div#instagram-user-name {
+	display: flex;
+}
+
+#instagram-user-name span {
+	margin: auto;
+	font-size: x-large;
+	font-weight: 800;
+}
+.instagram-posts{
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+}
+.instagram-post-block {
+	display: flex;
+}
+
+.instagram-post-card {
+	box-sizing: border-box;
+	padding: 20px;
+	flex-basis: 25%;
+	min-width: 25%;
+}
+.instagram-post-card img {
+	border-radius: 4px;
+	box-shadow:  0px 2px 2px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease-in-out;
+}
+.instagram-post-like-comment {
+	display: flex;
+	background: rgba(17, 17, 17, 0.3);
+	position: absolute;
+	width: 100%;
+	border-radius: 4px;
+	top: 0;
+	left: 0;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+.instagram-post-like-comment .action-wrapper{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 60%;
+}
+
+.instagram-post-like-count {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 35%;
+}
+.instagram-post-comment-count {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 25%;
+}
+
+.post-link{
+	display: inherit;
+	text-decoration: none;
+	position: relative;
+}
+.post-link:hover .instagram-post-image-container img  {
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.post-link:hover .instagram-post-like-comment {
+	opacity: 1;
+}

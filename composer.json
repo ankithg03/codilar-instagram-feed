@@ -1,0 +1,24 @@
+{
+    "name": "ankith/module-instagram-feed",
+    "description": "Module Search",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "ankith@codilar.com",
+            "name": "ankith"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+	 "ankith/core": "*",
+	},
+    "autoload": {
+        "psr-4": {
+            "Codilar\\InstagramFeed\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

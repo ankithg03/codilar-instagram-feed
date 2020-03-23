@@ -1,0 +1,151 @@
+<?php
+/**
+ * @var $block Instagram
+ */
+
+use Codilar\InstagramFeed\Block\Widget\Instagram;
+
+?>
+<?php
+/**
+ * @var $enable bool
+ */
+$enable = $block->isModuleEnable();
+
+/**
+ * @var $status bool
+ */
+$status = $block->getInstagramUserData($block->getData("instagram_link"));
+if ($enable):?>
+    <?php if($block->getPosts()!=null):?>
+        <?php $posts = $block->getPosts();
+    if ($status && count($posts)>3):?>
+        <div class="instagram-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="gradient-header-center">
+                        <h2 class="font-medium">Follow
+                            <span class="text-cl-primary instagram-link">
+                                <a
+                                    href="<?= $block->escapeHtmlAttr($block->getInstagramUrl())?>"
+                                ><?= $block->escapeHtmlAttr(__("@" . $block->getUserId())) ?> </a>
+                            </span> on Instagram
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="instagram-posts slick-custom">
+                <?php $count = 1; ?>
+                <?php foreach ($posts as $key => $post):?>
+                    <div class="instagram-post-card">
+                        <a class="post-link" href="<?= $block->escapeHtml(__($post["post_url"]))?>">
+                            <div class="instagram-post-card-top">
+                                <div class="instagram-post-image-container">
+                                    <img  src="<?= $block->escapeHtml($post["thumbnail_src"]); ?>"
+                                          alt="<?php if (isset($post["post_description"])): ?>
+                                                            <?= $block->escapeHtml(__($post["post_description"])); ?>
+                                                        <?php else:?>
+                                                            <?= $block->escapeHtml(__('thumbnail image'));?>
+                                                        <?php endif;?>"
+                                          width="300px" />
+                                </div>
+                            </div>
+                            <div class="instagram-post-like-comment">
+                                <div class="action-wrapper">
+                                    <div class="instagram-post-like-count">
+                                        <svg
+                                                width="28"
+                                                height="26"
+                                                viewBox="0 0 28 26"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M14.14 21.77L14 21.91L13.846 21.77C7.196 15.736 2.8 11.746 2.8
+                                            7.7C2.8 4.9 4.9 2.8 7.7 2.8C9.856 2.8 11.956 4.2 12.698 6.104H15.302C16.044
+                                            4.2 18.144 2.8 20.3 2.8C23.1 2.8 25.2 4.9 25.2 7.7C25.2 11.746 20.804 15.736
+                                            14.14 21.77ZM20.3 0C17.864 0 15.526 1.134 14 2.912C12.474 1.134 10.136 0 7.7
+                                            0C3.388 0 0 3.374 0 7.7C0 12.978 4.76 17.304 11.97 23.842L14 25.69L16.03
+                                            23.842C23.24 17.304 28 12.978 28 7.7C28 3.374 24.612 0 20.3 0Z"
+                                                  fill="white"
+                                            />
+                                        </svg><span><?= $block->escapeHtml(__($post["likes"])); ?></span>
+                                    </div>
+                                    <div class="instagram-post-comment-count">
+                                        <svg
+                                                width="27"
+                                                height="22"
+                                                viewBox="0 0 27 22"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M24.9895 4.56185C23.7939 3.15354 22.1698 2.04102 20.1173
+                                            1.22459C18.0648 0.408165 15.8228 0 13.3915 0C10.9604 0 8.7184 0.408165
+                                            6.66585 1.22459C4.6133 2.04102 2.98923 3.15334 1.79353 4.56185C0.597773
+                                            5.97026 0 7.50514 0 9.16665C0 10.5989 0.450725 11.9409 1.35254
+                                            13.1917C2.25436 14.4426 3.48723 15.4931 5.05173 16.3429C4.942 16.7247
+                                            4.81249 17.0875 4.66298 17.4315C4.51353 17.7752 4.37904 18.057 4.25948
+                                            18.2767C4.13981 18.4961 3.97805 18.7397 3.77363 19.0069C3.56952
+                                            19.2744 3.41509 19.4631 3.31044 19.5729C3.2059 19.6828 3.03404
+                                            19.864 2.79475 20.1172C2.55578 20.3701 2.40125 20.5351 2.33157
+                                            20.6115C2.32147 20.6163 2.28168 20.659 2.21195 20.7406C2.14228 20.8216
+                                            2.10731 20.8619 2.10731 20.8619L2.01763 20.9909C1.96775 21.0621 1.94534
+                                            21.1076 1.95026 21.1265C1.95529 21.1457 1.94534 21.1935 1.92042
+                                            21.2697C1.89545 21.3462 1.89802 21.4036 1.92786 21.4417V21.4561C1.96775
+                                            21.6183 2.04737 21.7497 2.16693 21.8499C2.2865 21.9499 2.42124 22 2.57054
+                                            22H2.64535C3.29317 21.9234 3.86105 21.8187 4.3492 21.685C6.95985 21.0453
+                                            9.25163 19.8899 11.2244 18.2187C11.9716 18.2951 12.694 18.3332 13.3914
+                                            18.3332C15.8226 18.3332 18.0647 17.9251 20.1172 17.1084C22.1697 16.2919
+                                            23.7938 15.1798 24.9894 13.7714C26.1852 12.3631 26.783 10.8281 26.783
+                                            9.1666C26.7831 7.50534 26.1853 5.97026 24.9895 4.56185ZM23.3081
+                                            12.8192C22.2665 13.9457 20.8616 14.8411 19.0931 15.5046C17.3245 16.168
+                                            15.4238 16.5 13.3912 16.5C12.7835 16.5 12.1358 16.4619 11.4484
+                                            16.3853L10.5964 16.2996L9.95374 16.8441C8.72835 17.8754 7.35817 18.6917
+                                            5.84366 19.2933C6.30192 18.52 6.65067 17.6987 6.88991 16.83L7.29341
+                                            15.4548L5.99317 14.7389C4.69785 14.0319 3.69411 13.1941 2.98154
+                                            12.2248C2.26907 11.2558 1.91299 10.2362 1.91299 9.16685C1.91299 7.85862
+                                            2.4336 6.64125 3.47477 5.51449C4.51625 4.38782 5.92098 3.49258 7.68964
+                                            2.82896C9.45831 2.16529 11.3587 1.83318 13.3915 1.83318C15.4241 1.83318
+                                            17.3245 2.16514 19.093 2.82876C20.8615 3.49243 22.2664 4.38762 23.308
+                                            5.51429C24.3492 6.64105 24.8698 7.85847 24.8698 9.1666C24.8698 10.4747
+                                            24.3492 11.6924 23.3081 12.8192Z"
+                                                  fill="white"
+                                            />
+                                        </svg>
+                                        <span>
+                                        <?= $block->escapeHtml(__($post["comment"])); ?>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <?php $count++;?>
+                <?php endforeach; ?>
+                <?php if ($count%4 != 1):?>
+            </div>
+                <?php endif; ?>
+        </div>
+    <?php endif;?>
+    <?php else: ?>
+         <div><?= $block->escapeHtml(__('   ')); /**when instagram url is not present */?></div>
+        <?php
+    endif;
+endif;
+?>
+
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $('.instagram-posts').slick({
+            autoplay: false,
+            infinite: true,
+            arrows: true,
+            dots: false,
+            slidesToShow: 4,
+            focusOnSelect: false
+        });
+    });
+
+</script>

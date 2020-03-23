@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * system.xml
+ *
+ * @copyright Copyright © 2019 Codilar Technologies Pvt. Ltd.. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="customer_instagram_feed" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Instagram</label>
+            <tab>codilar_extension_tab</tab>
+            <resource>Codilar_InstagramFeed::config</resource>
+            <group id="default" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Instagram Extension</label>
+                <hide_in_single_store_mode>1</hide_in_single_store_mode>
+                <field id="module_status" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable The Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>To enable the Extension on Storefront, set Yes to Show on Storefront/set No to Not Show on Storefront</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,9 @@
+<?php
+$viewModel =  $block->getViewModel();
+?>
+<?= $block->getLayout()
+    ->createBlock(Codilar\InstagramFeed\Block\Widget\Instagram::class)
+    ->setInstagramLink($viewModel->getCustomerAttributeValue('instagram_link'))->toHtml();?>
+
+
+

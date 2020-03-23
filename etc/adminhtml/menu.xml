@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codilar_InstagramFeed::customer"
+             title="Customer"
+             translate="title"
+             module="Codilar_InstagramFeed"
+             parent="Codilar_Core::extensions"
+             sortOrder="50"
+             dependsOnModule="Codilar_Core"
+             resource="Codilar_InstagramFeed::customer" />
+
+        <add id="Codilar_InstagramFeed::customer_title"
+             title="Customer"
+             translate="title"
+             module="Codilar_InstagramFeed"
+             parent="Codilar_Core::extensions"
+             sortOrder="50"
+             dependsOnModule="Codilar_Core"
+             resource="Codilar_InstagramFeed::customer_title" />
+
+        <add id="Codilar_InstagramFeed::instagram_feed"
+             title="Instagram Feed"
+             translate="title"
+             module="Codilar_InstagramFeed"
+             parent="Codilar_InstagramFeed::customer"
+             sortOrder="50"
+             dependsOnModule="Codilar_Core"
+             action="adminhtml/system_config/edit/section/customer_instagram_feed"
+             resource="Codilar_InstagramFeed::instagram_feed" />
+    </menu>
+</config>

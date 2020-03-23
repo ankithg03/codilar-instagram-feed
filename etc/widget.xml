@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="instagram_feed_widget" class="Codilar\InstagramFeed\Block\Widget\Instagram">
+        <label translate="true">Codilar Instagram widget</label>
+        <description>Codilar Instagram Feed widget Please Enable the Module In
+            Store > Configuration > Codilar > Instagram > Instagram Extension > Enable The Extension > Yes
+        </description>
+        <parameters>
+            <parameter name="instagram_link" xsi:type="text" visible="true" required="true" sort_order="10" >
+                <label translate="true">Instagram Link</label>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="instagram_hashtag_widget" class="Codilar\InstagramFeed\Block\Widget\InstagramHashTag">
+        <label translate="true">Codilar Instagram Hash Tag widget</label>
+        <description>Codilar Instagram Feed widget</description>
+        <parameters>
+            <parameter name="instagram_link" xsi:type="text" visible="true" required="true" sort_order="10" >
+                <label translate="true">Instagram Hash Tag Link</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
